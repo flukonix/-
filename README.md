@@ -4,7 +4,7 @@ def re_list(lst):
 
     return lst[::-1]
 
-r_list = [1,2,3,4,5]
+r_list = [1,2,3]
 
 r_list = re_list(r_list)
 
@@ -20,7 +20,7 @@ def change(lst):
 
     return lst
 
-print(change([1,2,3,4,5]))
+print(change([1,2,3,4]))
 
 
 
@@ -30,7 +30,7 @@ def to_list(*args):
 
     return list(args)
 
-print(to_list(1,2,3,4,5))
+print(to_list(1,2,3,4))
 
 
 
@@ -40,7 +40,7 @@ def useless(s):
 
     return max(s)/len(s)
 
-print(useless([1,2,3,4,5]))
+print(useless([1,2,3,4]))
 
 
 
@@ -48,23 +48,23 @@ print(useless([1,2,3,4,5]))
 
 def list_sort(lst):
 
-    for x in range(len(lst)-1):
+    for i in range(len(lst)-1):
 
         for y in range(len(lst)-1):
 
-            if abs(lst[y]) < abs(lst[y+1]):
+            if abs(lst[i]) < abs(lst[i+1]):
 
-                f = lst[y]
+                f = lst[i]
 
-                l = lst[y+1]
+                l = lst[i+1]
 
-                lst[y] = l
+                lst[i] = l
 
-                lst[y+1] = f
+                lst[i+1] = f
 
     return lst
 
-print(f"Список в порядке убывания абсолютного значения чисел{list_sort([-1,-3,78,-12,2,-56,44,56])}")
+print(f"Список в порядке убывания:{list_sort([-1000, 23, 488, 198764, -90, 549])}")
 
 
 
@@ -92,7 +92,7 @@ def all_eq(lst):
 
     return lst
 
-print(all_eq(["puppy","array","beautiful","car"]))
+print(all_eq(["red","bird","ice cream","prins"]))
 
 
 
@@ -106,7 +106,7 @@ def to_float(num):
 
     return float(num)
 
-print(to_float(55))
+print(to_float(69))
 
 
 
@@ -116,7 +116,7 @@ def avg_5(a,b,c,d):
 
     return round((a*b*c*d)/4, 5)
 
-print(avg_5(1.11,7.3,6.7,3.4))
+print(avg_5(1.59, 47.86, 589.1245, 895))
 
 
 
@@ -130,17 +130,17 @@ def mul_to_int(a,b):
 
     return a*b
 
-print(mul_to_int(1.4,2))
+print(mul_to_int(2.3, 67, 8.9))
 
 
 
 #task_4_screen_2
 
-def find_r(v):
+def find_r(q):
 
-    return ((3*v)/(4*3.14))**(1/3)
+    return ((3*q)/(4*3.14))**(1/3)
 
-print(find_r(523.33))
+print(find_r(666.66))
 
 
 
@@ -154,9 +154,11 @@ def dislike_6(a):
 
     return True
 
-print(dislike_6(5))
+print(dislike_6(52))
 
 print(dislike_6(6))
+
+print(dislike_6(-1234))
 
 
 
@@ -188,7 +190,9 @@ def help_bool(letter):
 
 print(help_bool("м"))
 
+print(help_bool("а"))
 
+print(help_bool("д"))
 
 #task_1_screen_4
 
@@ -230,15 +234,15 @@ print(help_bool("м"))
 
 def to_dict(lst):
 
-    dt = {}
+    a = {}
 
     for i in lst:
 
-        dt[i] = i
+        a[i] = i
 
-    return dt
+    return a
 
-print(to_dict(["s","fig"]))
+print(to_dict(["qwr","op"]))
 
 
 
@@ -282,21 +286,21 @@ print(count_it("184709064732"))
 
 #task_4_screen_6
 
-dct = {"word": "red", "item": "box", "pizza": "pipironiki", "school": "teacher", "car": "BMW"}
+a = {"word": "red", "item": "box", "pizza": "pipironiki", "school": "teacher", "car": "BMW"}
 
-first = list(dct.values())[0]
+first = list(a.values())[0]
 
-second = list(dct.values())[-1]
+second = list(a.values())[-1]
 
-dct[list(dct.keys())[0]] = second
+a[list(a.keys())[0]] = second
 
-dct[list(dct.keys())[-1]] = first
+a[list(a.keys())[-1]] = first
 
-del(dct[list(dct.keys())[1]])
+del(a[list(a.keys())[1]])
 
-dct["new_key"] = "new_value"
+a["new_key"] = "new_value"
 
-print(dct)
+print(a)
 
 
 
@@ -324,7 +328,7 @@ def first_last(letter, st):
 
     return turp
 
-print(first_last("w","eww"))
+print(first_last("w","e"))
 
 
 
@@ -338,7 +342,7 @@ def top3(st):
 
     return ', '.join([f'{letter} - {i}' for letter, i in count3])
 
-print(top3("ajkfjahfghagfwya wduwjadhawndga"))
+print(top3("eiohgsejgiifohauifhosergiuw8efg"))
 
 
 
@@ -410,13 +414,13 @@ def cleaned_str(st):
 
     clean_lst = []
 
-    for s in st:
+    for i in st:
 
-        if s != '@':
+        if i != '@':
 
-            clean_lst.append(s)
+            clean_lst.append(i)
 
-        elif s == '@' and clean_lst:
+        elif i == '@' and clean_lst:
 
             clean_lst.pop()
 
@@ -439,6 +443,8 @@ def rock_paper_shears(p1, p2):
     else: return "Второй игрок выйграл"
 
 print(rock_paper_shears("Бумага", "Ножницы"))
+
+print(rock_paper_shears("Ножницы", "Камень"))
 
 
 
@@ -520,7 +526,7 @@ def black_jack(lst):
 
     return True if sum(lst) > 21 else False
 
-print(black_jack([11, 10]))
+print(black_jack([9, 11234]))
 
 
 
@@ -528,39 +534,39 @@ print(black_jack([11, 10]))
 
 def plus_in_str(st):
 
-    s = 0
+    a = 0
 
-    n = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    s = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
-    ss = []
+    d = []
 
     for i in range(len(st)):
 
-        if st[i] in n:
+        if st[i] in s:
 
-            ss.append(st[i])
+            d.append(st[i])
 
         else:
 
-            ss.append("0")
+            d.append("0")
 
-    ss = "".join(ss)
+    d = "".join(ss)
 
-    ss = ss.split("0")
+    d = d.split("0")
 
-    for i in range(len(ss)):
+    for i in range(len(d)):
 
-        if ss[i] == "":
+        if d[i] == "":
 
-            ss[i] = "0"
+            d[i] = "0"
 
-    for i in range(len(ss)):
+    for i in range(len(d)):
 
-        s += int(ss[i])
+        a += int(d[i])
 
-    return s
+    return a
 
-print(plus_in_str("абвгд7ап67фдрвц891офал1"))
+print(plus_in_str("wfjhuudwqijduf543627"))
 
 
 
@@ -568,17 +574,17 @@ print(plus_in_str("абвгд7ап67фдрвц891офал1"))
 
 def l(st):
 
-    s = st.replace("+", "")
+    a = st.replace("+", "")
 
-    ll = 0
+    s = 0
 
     for i in range(1, len(st)-1):
 
         if st[i] != "+" and st[i-1] == "+" and st[i+1] == "+":
 
-            ll += 1
+            s += 1
 
-    return True if len(s) == ll else False
+    return True if len(a) == ll else False
 
 print(l("+а+б+в+г++д++"))
 
@@ -586,15 +592,15 @@ print(l("+а+б+в+г++д++"))
 
 #Screen 6
 
-def to_24(t):
+def to_24(a):
 
     if "pm" in t:
 
-        t = t.replace(" pm", "")
+        a = a.replace(" pm", "")
 
-        time = t.split(":")
+        time = a.split(":")
 
-        t = t.split(":")
+        a = a.split(":")
 
         if int(time[0]) + 12 == 24:
 
@@ -604,15 +610,15 @@ def to_24(t):
 
             x = str(int(time[0]) + 12)
 
-        t[0] = x
+        a[0] = x
 
-        return ":".join(t)
+        return ":".join(a)
 
     else:
 
-        t = t.replace("am", "")
+        a = a.replace("am", "")
 
-    return t
+    return a
 
 print(to_24("12:34 pm"))
 
@@ -706,13 +712,13 @@ def from_int_to_str(integer):
 
     return name
 
-print(from_int_to_str(109))
+print(from_int_to_str(897))
 
 
 
 #Screen 9
 
-def luck(n):
+def luck(a):
 
     val = 0
 
@@ -720,9 +726,9 @@ def luck(n):
 
         lst = []
 
-        for n in str(i):
+        for a in str(i):
 
-            lst.append(int(n))
+            lst.append(int(a))
 
         if len(lst) % 2 != 0:
 
@@ -744,6 +750,8 @@ def luck(n):
 
 print(luck(4))
 
+
+
 #Screen 10
 
 def xy (x,y):
@@ -758,7 +766,7 @@ def xy (x,y):
 
     return lst_xy
 
-print(xy([3,2,1],[1,2,3]))
+print(xy([5,4,3],[3,4,5]))
 
 
 
@@ -770,7 +778,7 @@ def hello(lst):
 
         print(f"Привет {lst[i]}")
 
-hello(["Миша", "Петя", "Маша"])
+print(hello(["Семен", "Костя", "Богдан"]))
 
 
 
@@ -784,7 +792,7 @@ def double(st):
 
     return 0
 
-print(double("Деревянный"))
+print(double("Оловянный"))
 
 
 
@@ -818,17 +826,17 @@ def without_space(st):
 
     return "".join(st)
 
-print(without_space(" Привет мой   друг   ,       ты капуста  . "))
+print(without_space(" Привет мой друг, ты капуста. "))
 
 
 
 #Screen 14
 
-def m(h, r):
+def m(a, s):
 
-    return round(3.14*(r**2)*h*1000,2)
+    return round(3.14*(s**2)*a*1000,2)
 
-print(m(0.15,0.05))
+print(m(45, 0.78))
 
 
 
@@ -846,7 +854,7 @@ def s(st):
 
     return sum
 
-print(s("1, 2, 3"))
+print(s("1, 2, 3, 4, 5"))
 
 
 
@@ -854,7 +862,7 @@ print(s("1, 2, 3"))
 
 def v(n):
 
-    s = 0
+    a = 0
 
     for i in range(n):
 
@@ -864,11 +872,11 @@ def v(n):
 
         z = int(input(f"Введите высоту коробки {i + 1} "))
 
-        s += x*y*z
+        a+=x*y*z
 
-    return s
+    return a
 
-#print(v(3))
+#print(v(7))
 
 
 
@@ -878,7 +886,7 @@ def length(a,b):
 
     return round(abs(((b["x"] - a["x"])**2 + (b["y"] - a["y"])**2)**0.5), 3)
 
-print(length({"x": 2, "y": 1},{"x": 3, "y": 4}))
+print(length({"x": 4, "y": 5},{"x": 6, "y": 7}))
 
 
 
@@ -904,15 +912,15 @@ print(language("Афигеть язык хакера!"))
 
 def up(lst):
 
-    ls = []
+    a = []
 
     for i in range(len(lst)):
 
-        ls.append(sum(lst[:i]) + lst[i])
+        a.append(sum(lst[:i]) + lst[i])
 
-    return ls
+    return a
 
-print(up([1,2,3,4,5,6]))
+print(up([1,2,3,4,5,6,7,8,9,0]))
 
 
 
@@ -942,7 +950,7 @@ def med(lst):
 
         return lst[l//2]
 
-print(med([2,2,6,8,2,10,3]))
+print(med([2,5,9,09,43,999]))
 
 
 
@@ -956,7 +964,7 @@ def device():
 
           20: "T", 21: "U", 22: "V", 23: "W", 24: "X", 25: "Y", 26: "Z"}
 
-    st = input("Введите слово с помощью клавиши 1 ")
+    st = input("Введите слово с помощью клавиши 1: ")
 
     st = st.split(" ")
 
@@ -966,7 +974,7 @@ def device():
 
     return "".join(st)
 
-#print(device())
+print(device())
 
 
 
@@ -990,19 +998,19 @@ def remake(st):
 
     return "".join(st)
 
-print(remake(".гурД йоМ тевирП"))
+print(remake("пРикИИвикЕт ДРусуг"))
 
 
 
 #Screen 9
 
-def i_am_not_have_enemi(lst, enem):
+def i_am_not_have_enemi(lst, a):
 
-    for i in range(len(enem)):
+    for i in range(len(a)):
 
-        if enem[i] in lst:
+        if a[i] in lst:
 
-            lst.remove(enem[i])
+            lst.remove(a[i])
 
     return lst
 
